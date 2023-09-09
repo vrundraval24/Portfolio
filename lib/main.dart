@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/responsive/desktop.dart';
+import 'package:portfolio/responsive/mobile.dart';
+import 'package:portfolio/responsive/responsive_layouts.dart';
+import 'package:portfolio/responsive/tablet.dart';
+
+late Size mq;
 
 void main() {
   runApp(const MyApp());
@@ -9,40 +15,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Portfolio - Vrund Raval',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // brightness: Brightness.light,
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Vrund Raval'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
-
-        title: Text(widget.title),
-      ),
+      home: const ResponsiveLayouts(desktop: Desktop(), mobile: Mobile(), tablet: Tablet()),
     );
   }
 }
