@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/mobile/mobile_home.dart';
 
 class Mobile extends StatefulWidget {
   const Mobile({super.key});
@@ -10,8 +11,6 @@ class Mobile extends StatefulWidget {
 class _MobileState extends State<Mobile> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.redAccent,
-    );
+    return const MobileHome();
   }
 }

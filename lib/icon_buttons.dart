@@ -17,6 +17,7 @@ class _IconButtonsState extends State<IconButtons> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IconButton(
           onPressed: () {
@@ -47,7 +48,7 @@ class _IconButtonsState extends State<IconButtons> {
         IconButton(
           onPressed: () {
 
-            _url = Uri.parse('');
+            _url = Uri.parse('https://twitter.com/VrundRaval24');
             _launchUrl();
 
           },

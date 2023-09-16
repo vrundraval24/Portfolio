@@ -154,7 +154,7 @@ class _NavbarState extends State<Navbar> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Text(
-                      'Contacts',
+                      'Contact',
                       style: GoogleFonts.poppins(
                           color: Colors.black,
                           textStyle: const TextStyle(fontSize: 18)),

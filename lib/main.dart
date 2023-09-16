@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/responsive/desktop.dart';
 import 'package:portfolio/responsive/mobile.dart';
+import 'package:portfolio/responsive/nothing.dart';
 import 'package:portfolio/responsive/responsive_layouts.dart';
 import 'package:portfolio/responsive/tablet.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // brightness: Brightness.light,
         useMaterial3: true,
       ),
-      home: const ResponsiveLayouts(desktop: Desktop(), mobile: Mobile(), tablet: Tablet()),
+      home: const ResponsiveLayouts(desktop: Desktop(), mobile: Mobile(), tablet: Tablet(), nothing: Nothing(),),
     );
   }
 }

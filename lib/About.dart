@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'icon_buttons.dart';
 import 'main.dart';
@@ -12,6 +13,9 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
+
+  late Uri _url;
+
   @override
   Widget build(BuildContext context) {
     mq = MediaQuery.of(context).size;
@@ -72,7 +76,12 @@ class _AboutState extends State<About> {
                   Row(
                     children: [
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+                          _url = Uri.parse('https://drive.google.com/file/d/1AZOP2DYHQlaExPS5q1wPW4fd43Nw8lW1/view?usp=sharing');
+                          _launchUrl();
+
+                        },
                         style: ButtonStyle(
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -109,4 +118,12 @@ class _AboutState extends State<About> {
       ),
     );
   }
+
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
+
 }
